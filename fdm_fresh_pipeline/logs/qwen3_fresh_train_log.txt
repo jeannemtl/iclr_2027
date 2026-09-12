@@ -1,0 +1,96 @@
+Device: cuda
+Model: Qwen/Qwen3-0.6B-Base
+Channels: 40
+Loading weights:   0%|          | 0/310 [00:00<?, ?it/s]Loading weights: 100%|██████████| 310/310 [00:00<00:00, 6520.34it/s]
+[transformers] `use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+
+============================================================
+STAGE 0: Stage 0: Easy [qwen3]
+============================================================
+  Stage 0 Epoch 1: Train=0.2403, Val=0.2303
+  New best val loss: 0.2303
+  Stage 0 Epoch 2: Train=0.2246, Val=0.2207
+  New best val loss: 0.2207
+  Stage 0 Epoch 3: Train=0.2134, Val=0.1985
+  New best val loss: 0.1985
+  Stage 0 Epoch 4: Train=0.1727, Val=0.1359
+  New best val loss: 0.1359
+  Stage 0 Epoch 5: Train=0.0751, Val=0.0339
+  New best val loss: 0.0339
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:01<00:00,  1.87s/it]Writing model shards: 100%|██████████| 1/1 [00:01<00:00,  1.87s/it]
+
+============================================================
+STAGE 1: Stage 1: Standard [qwen3]
+============================================================
+  Stage 1 Epoch 1: Train=0.0108, Val=0.0042
+  New best val loss: 0.0042
+  Stage 1 Epoch 2: Train=0.0011, Val=0.0013
+  New best val loss: 0.0013
+  Stage 1 Epoch 3: Train=0.0003, Val=0.0009
+  New best val loss: 0.0009
+  Stage 1 Epoch 4: Train=0.0002, Val=0.0008
+  New best val loss: 0.0008
+  Stage 1 Epoch 5: Train=0.0002, Val=0.0008
+  New best val loss: 0.0008
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:01<00:00,  1.84s/it]Writing model shards: 100%|██████████| 1/1 [00:01<00:00,  1.84s/it]
+
+============================================================
+STAGE 2: Stage 2: Moderate [qwen3]
+============================================================
+  Stage 2 Epoch 1: Train=0.0014, Val=0.0006
+  New best val loss: 0.0006
+  Stage 2 Epoch 2: Train=0.0002, Val=0.0003
+  New best val loss: 0.0003
+  Stage 2 Epoch 3: Train=0.0001, Val=0.0003
+  New best val loss: 0.0003
+  Stage 2 Epoch 4: Train=0.0001, Val=0.0003
+  New best val loss: 0.0003
+  Stage 2 Epoch 5: Train=0.0001, Val=0.0003
+  New best val loss: 0.0003
+  Stage 2 Epoch 6: Train=0.0001, Val=0.0003
+  New best val loss: 0.0003
+  Stage 2 Epoch 7: Train=0.0001, Val=0.0003
+  New best val loss: 0.0003
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:01<00:00,  1.94s/it]Writing model shards: 100%|██████████| 1/1 [00:01<00:00,  1.94s/it]
+
+============================================================
+STAGE 3: Stage 3: Harder [qwen3]
+============================================================
+  Stage 3 Epoch 1: Train=0.0004, Val=0.0003
+  New best val loss: 0.0003
+  Stage 3 Epoch 2: Train=0.0002, Val=0.0003
+  New best val loss: 0.0003
+  Stage 3 Epoch 3: Train=0.0001, Val=0.0003
+  New best val loss: 0.0003
+  Stage 3 Epoch 4: Train=0.0001, Val=0.0003
+  Stage 3 Epoch 5: Train=0.0001, Val=0.0003
+  New best val loss: 0.0003
+  Stage 3 Epoch 6: Train=0.0001, Val=0.0003
+  New best val loss: 0.0003
+  Stage 3 Epoch 7: Train=0.0001, Val=0.0003
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:01<00:00,  1.93s/it]Writing model shards: 100%|██████████| 1/1 [00:01<00:00,  1.93s/it]
+
+============================================================
+STAGE 4: Stage 4: Hardest [qwen3]
+============================================================
+  Stage 4 Epoch 1: Train=0.0004, Val=0.0003
+  New best val loss: 0.0003
+  Stage 4 Epoch 2: Train=0.0001, Val=0.0003
+  New best val loss: 0.0003
+  Stage 4 Epoch 3: Train=0.0001, Val=0.0002
+  New best val loss: 0.0002
+  Stage 4 Epoch 4: Train=0.0001, Val=0.0002
+  New best val loss: 0.0002
+  Stage 4 Epoch 5: Train=0.0001, Val=0.0002
+  New best val loss: 0.0002
+  Stage 4 Epoch 6: Train=0.0001, Val=0.0002
+  New best val loss: 0.0002
+  Stage 4 Epoch 7: Train=0.0001, Val=0.0002
+  Stage 4 Epoch 8: Train=0.0001, Val=0.0002
+  Stage 4 Epoch 9: Train=0.0001, Val=0.0002
+  New best val loss: 0.0002
+  Stage 4 Epoch 10: Train=0.0001, Val=0.0002
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:02<00:00,  2.21s/it]Writing model shards: 100%|██████████| 1/1 [00:02<00:00,  2.21s/it]
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:02<00:00,  2.21s/it]Writing model shards: 100%|██████████| 1/1 [00:02<00:00,  2.21s/it]
+
+Saved final model: fdm_40ch_fresh_qwen3_model_final/

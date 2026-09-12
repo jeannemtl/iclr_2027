@@ -1,0 +1,91 @@
+Device: cuda
+Model: NousResearch/Hermes-3-Llama-3.2-3B
+Channels: 40
+Batch size: 2 x 2 accum = 4 effective
+LR scale factor: 0.3333333333333333
+Loading weights:   0%|          | 0/254 [00:00<?, ?it/s]Loading weights: 100%|██████████| 254/254 [00:00<00:00, 5963.55it/s]
+[transformers] The new embeddings will be initialized from a multivariate normal distribution that has old embeddings' mean and covariance. As described in this article: https://nlp.stanford.edu/~johnhew/vocab-expansion.html. To disable this, use `mean_resizing=False`
+
+============================================================
+STAGE 0: Stage 0: Easy [hermes3]
+============================================================
+  Using bitsandbytes AdamW8bit optimizer
+  Stage 0 Epoch 1: Train=0.2375, Val=0.2259
+  New best val loss: 0.2259
+  Stage 0 Epoch 2: Train=0.2226, Val=0.2205
+  New best val loss: 0.2205
+  Stage 0 Epoch 3: Train=0.2128, Val=0.2046
+  New best val loss: 0.2046
+  Stage 0 Epoch 4: Train=0.1690, Val=0.1239
+  New best val loss: 0.1239
+  Stage 0 Epoch 5: Train=0.0913, Val=0.0724
+  New best val loss: 0.0724
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:11<00:00, 11.78s/it]Writing model shards: 100%|██████████| 1/1 [00:11<00:00, 11.78s/it]
+
+============================================================
+STAGE 1: Stage 1: Standard [hermes3]
+============================================================
+  Using bitsandbytes AdamW8bit optimizer
+  Stage 1 Epoch 1: Train=0.0384, Val=0.0309
+  New best val loss: 0.0309
+  Stage 1 Epoch 2: Train=0.0224, Val=0.0231
+  New best val loss: 0.0231
+  Stage 1 Epoch 3: Train=0.0137, Val=0.0146
+  New best val loss: 0.0146
+  Stage 1 Epoch 4: Train=0.0091, Val=0.0145
+  New best val loss: 0.0145
+  Stage 1 Epoch 5: Train=0.0065, Val=0.0089
+  New best val loss: 0.0089
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:13<00:00, 13.98s/it]Writing model shards: 100%|██████████| 1/1 [00:13<00:00, 13.98s/it]
+
+============================================================
+STAGE 2: Stage 2: Moderate [hermes3]
+============================================================
+  Using bitsandbytes AdamW8bit optimizer
+  Stage 2 Epoch 1: Train=0.0035, Val=0.0029
+  New best val loss: 0.0029
+  Stage 2 Epoch 2: Train=0.0019, Val=0.0029
+  New best val loss: 0.0029
+  Stage 2 Epoch 3: Train=0.0014, Val=0.0030
+  Stage 2 Epoch 4: Train=0.0012, Val=0.0020
+  New best val loss: 0.0020
+  Stage 2 Epoch 5: Train=0.0011, Val=0.0020
+  New best val loss: 0.0020
+  Stage 2 Epoch 6: Train=0.0010, Val=0.0025
+  Stage 2 Epoch 7: Train=0.0009, Val=0.0020
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:11<00:00, 11.95s/it]Writing model shards: 100%|██████████| 1/1 [00:11<00:00, 11.95s/it]
+
+============================================================
+STAGE 3: Stage 3: Harder [hermes3]
+============================================================
+  Using bitsandbytes AdamW8bit optimizer
+  Stage 3 Epoch 1: Train=0.0005, Val=0.0006
+  New best val loss: 0.0006
+  Stage 3 Epoch 2: Train=0.0002, Val=0.0007
+  Stage 3 Epoch 3: Train=0.0002, Val=0.0005
+  New best val loss: 0.0005
+  Stage 3 Epoch 4: Train=0.0001, Val=0.0007
+  Stage 3 Epoch 5: Train=0.0001, Val=0.0009
+  Stage 3 Epoch 6: Train=0.0001, Val=0.0007
+  Stage 3 Epoch 7: Train=0.0001, Val=0.0006
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:12<00:00, 12.97s/it]Writing model shards: 100%|██████████| 1/1 [00:12<00:00, 12.97s/it]
+
+============================================================
+STAGE 4: Stage 4: Hardest [hermes3]
+============================================================
+  Using bitsandbytes AdamW8bit optimizer
+  Stage 4 Epoch 1: Train=0.0005, Val=0.0003
+  New best val loss: 0.0003
+  Stage 4 Epoch 2: Train=0.0002, Val=0.0003
+  Stage 4 Epoch 3: Train=0.0002, Val=0.0005
+  Stage 4 Epoch 4: Train=0.0002, Val=0.0007
+  Stage 4 Epoch 5: Train=0.0002, Val=0.0003
+  Stage 4 Epoch 6: Train=0.0002, Val=0.0004
+  Stage 4 Epoch 7: Train=0.0001, Val=0.0005
+  Stage 4 Epoch 8: Train=0.0001, Val=0.0004
+  Stage 4 Epoch 9: Train=0.0001, Val=0.0003
+  Stage 4 Epoch 10: Train=0.0001, Val=0.0005
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:09<00:00,  9.82s/it]Writing model shards: 100%|██████████| 1/1 [00:09<00:00,  9.82s/it]
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:09<00:00,  9.85s/it]Writing model shards: 100%|██████████| 1/1 [00:09<00:00,  9.85s/it]
+
+Saved final model: fdm_40ch_fresh_hermes3_model_final/

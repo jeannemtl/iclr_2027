@@ -1,0 +1,95 @@
+Device: cuda
+Model: gpt2-medium
+Channels: 40
+Loading weights:   0%|          | 0/292 [00:00<?, ?it/s]Loading weights: 100%|██████████| 292/292 [00:00<00:00, 7189.03it/s]
+[transformers] The new embeddings will be initialized from a multivariate normal distribution that has old embeddings' mean and covariance. As described in this article: https://nlp.stanford.edu/~johnhew/vocab-expansion.html. To disable this, use `mean_resizing=False`
+[transformers] `loss_type=None` was set in the config but it is unrecognized. Using the default loss: `ForCausalLMLoss`.
+
+============================================================
+STAGE 0: Stage 0: Easy [gpt2]
+============================================================
+  Stage 0 Epoch 1: Train=0.2103, Val=0.1904
+  New best val loss: 0.1904
+  Stage 0 Epoch 2: Train=0.1889, Val=0.1869
+  New best val loss: 0.1869
+  Stage 0 Epoch 3: Train=0.1817, Val=0.1746
+  New best val loss: 0.1746
+  Stage 0 Epoch 4: Train=0.1700, Val=0.1613
+  New best val loss: 0.1613
+  Stage 0 Epoch 5: Train=0.1507, Val=0.1369
+  New best val loss: 0.1369
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:02<00:00,  2.59s/it]Writing model shards: 100%|██████████| 1/1 [00:02<00:00,  2.59s/it]
+
+============================================================
+STAGE 1: Stage 1: Standard [gpt2]
+============================================================
+  Stage 1 Epoch 1: Train=0.1250, Val=0.1057
+  New best val loss: 0.1057
+  Stage 1 Epoch 2: Train=0.1003, Val=0.0809
+  New best val loss: 0.0809
+  Stage 1 Epoch 3: Train=0.0806, Val=0.0701
+  New best val loss: 0.0701
+  Stage 1 Epoch 4: Train=0.0639, Val=0.0673
+  New best val loss: 0.0673
+  Stage 1 Epoch 5: Train=0.0501, Val=0.0375
+  New best val loss: 0.0375
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:01<00:00,  1.54s/it]Writing model shards: 100%|██████████| 1/1 [00:01<00:00,  1.54s/it]
+
+============================================================
+STAGE 2: Stage 2: Moderate [gpt2]
+============================================================
+  Stage 2 Epoch 1: Train=0.0356, Val=0.0197
+  New best val loss: 0.0197
+  Stage 2 Epoch 2: Train=0.0266, Val=0.0163
+  New best val loss: 0.0163
+  Stage 2 Epoch 3: Train=0.0202, Val=0.0133
+  New best val loss: 0.0133
+  Stage 2 Epoch 4: Train=0.0157, Val=0.0157
+  Stage 2 Epoch 5: Train=0.0126, Val=0.0079
+  New best val loss: 0.0079
+  Stage 2 Epoch 6: Train=0.0101, Val=0.0053
+  New best val loss: 0.0053
+  Stage 2 Epoch 7: Train=0.0083, Val=0.0045
+  New best val loss: 0.0045
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:01<00:00,  1.71s/it]Writing model shards: 100%|██████████| 1/1 [00:01<00:00,  1.71s/it]
+
+============================================================
+STAGE 3: Stage 3: Harder [gpt2]
+============================================================
+  Stage 3 Epoch 1: Train=0.0047, Val=0.0033
+  New best val loss: 0.0033
+  Stage 3 Epoch 2: Train=0.0038, Val=0.0022
+  New best val loss: 0.0022
+  Stage 3 Epoch 3: Train=0.0033, Val=0.0018
+  New best val loss: 0.0018
+  Stage 3 Epoch 4: Train=0.0029, Val=0.0019
+  Stage 3 Epoch 5: Train=0.0027, Val=0.0015
+  New best val loss: 0.0015
+  Stage 3 Epoch 6: Train=0.0025, Val=0.0014
+  New best val loss: 0.0014
+  Stage 3 Epoch 7: Train=0.0023, Val=0.0008
+  New best val loss: 0.0008
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:01<00:00,  1.85s/it]Writing model shards: 100%|██████████| 1/1 [00:01<00:00,  1.85s/it]
+
+============================================================
+STAGE 4: Stage 4: Hardest [gpt2]
+============================================================
+  Stage 4 Epoch 1: Train=0.0027, Val=0.0009
+  New best val loss: 0.0009
+  Stage 4 Epoch 2: Train=0.0024, Val=0.0007
+  New best val loss: 0.0007
+  Stage 4 Epoch 3: Train=0.0021, Val=0.0006
+  New best val loss: 0.0006
+  Stage 4 Epoch 4: Train=0.0019, Val=0.0007
+  Stage 4 Epoch 5: Train=0.0017, Val=0.0006
+  New best val loss: 0.0006
+  Stage 4 Epoch 6: Train=0.0016, Val=0.0004
+  New best val loss: 0.0004
+  Stage 4 Epoch 7: Train=0.0015, Val=0.0008
+  Stage 4 Epoch 8: Train=0.0014, Val=0.0006
+  Stage 4 Epoch 9: Train=0.0013, Val=0.0018
+  Stage 4 Epoch 10: Train=0.0012, Val=0.0009
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:01<00:00,  1.92s/it]Writing model shards: 100%|██████████| 1/1 [00:01<00:00,  1.92s/it]
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:01<00:00,  1.87s/it]Writing model shards: 100%|██████████| 1/1 [00:01<00:00,  1.87s/it]
+
+Saved final model: fdm_40ch_fresh_gpt2_model_final/

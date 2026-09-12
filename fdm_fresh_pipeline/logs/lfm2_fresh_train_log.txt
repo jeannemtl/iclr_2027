@@ -1,0 +1,99 @@
+Device: cuda
+Model: LiquidAI/LFM2.5-1.2B-Base
+Architecture: HYBRID (10 conv + 6 GQA attention blocks)
+Batch size: 2 x 2 accum = 4 effective
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights: 100%|██████████| 148/148 [00:00<00:00, 7420.35it/s]
+[transformers] `use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+
+============================================================
+STAGE 0: Stage 0: Easy [lfm2]
+============================================================
+  Stage 0 Epoch 1: Train=0.1850, Val=0.1614
+  New best val loss: 0.1614
+  Stage 0 Epoch 2: Train=0.1120, Val=0.0289
+  New best val loss: 0.0289
+  Stage 0 Epoch 3: Train=0.0080, Val=0.0030
+  New best val loss: 0.0030
+  Stage 0 Epoch 4: Train=0.0007, Val=0.0018
+  New best val loss: 0.0018
+  Stage 0 Epoch 5: Train=0.0002, Val=0.0015
+  New best val loss: 0.0015
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:05<00:00,  5.02s/it]Writing model shards: 100%|██████████| 1/1 [00:05<00:00,  5.02s/it]
+
+============================================================
+STAGE 1: Stage 1: Standard [lfm2]
+============================================================
+  Stage 1 Epoch 1: Train=0.0019, Val=0.0006
+  New best val loss: 0.0006
+  Stage 1 Epoch 2: Train=0.0001, Val=0.0003
+  New best val loss: 0.0003
+  Stage 1 Epoch 3: Train=0.0001, Val=0.0003
+  New best val loss: 0.0003
+  Stage 1 Epoch 4: Train=0.0000, Val=0.0003
+  New best val loss: 0.0003
+  Stage 1 Epoch 5: Train=0.0000, Val=0.0003
+  New best val loss: 0.0003
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:04<00:00,  4.03s/it]Writing model shards: 100%|██████████| 1/1 [00:04<00:00,  4.03s/it]
+
+============================================================
+STAGE 2: Stage 2: Moderate [lfm2]
+============================================================
+  Stage 2 Epoch 1: Train=0.0006, Val=0.0002
+  New best val loss: 0.0002
+  Stage 2 Epoch 2: Train=0.0001, Val=0.0002
+  New best val loss: 0.0002
+  Stage 2 Epoch 3: Train=0.0000, Val=0.0002
+  New best val loss: 0.0002
+  Stage 2 Epoch 4: Train=0.0000, Val=0.0002
+  New best val loss: 0.0002
+  Stage 2 Epoch 5: Train=0.0000, Val=0.0002
+  Stage 2 Epoch 6: Train=0.0000, Val=0.0002
+  New best val loss: 0.0002
+  Stage 2 Epoch 7: Train=0.0000, Val=0.0002
+  New best val loss: 0.0002
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:04<00:00,  4.07s/it]Writing model shards: 100%|██████████| 1/1 [00:04<00:00,  4.07s/it]
+
+============================================================
+STAGE 3: Stage 3: Harder [lfm2]
+============================================================
+  Stage 3 Epoch 1: Train=0.0002, Val=0.0001
+  New best val loss: 0.0001
+  Stage 3 Epoch 2: Train=0.0000, Val=0.0001
+  New best val loss: 0.0001
+  Stage 3 Epoch 3: Train=0.0000, Val=0.0001
+  New best val loss: 0.0001
+  Stage 3 Epoch 4: Train=0.0000, Val=0.0001
+  New best val loss: 0.0001
+  Stage 3 Epoch 5: Train=0.0000, Val=0.0001
+  New best val loss: 0.0001
+  Stage 3 Epoch 6: Train=0.0000, Val=0.0001
+  New best val loss: 0.0001
+  Stage 3 Epoch 7: Train=0.0000, Val=0.0001
+  New best val loss: 0.0001
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:03<00:00,  3.58s/it]Writing model shards: 100%|██████████| 1/1 [00:03<00:00,  3.58s/it]
+
+============================================================
+STAGE 4: Stage 4: Hardest [lfm2]
+============================================================
+  Stage 4 Epoch 1: Train=0.0002, Val=0.0001
+  New best val loss: 0.0001
+  Stage 4 Epoch 2: Train=0.0000, Val=0.0001
+  New best val loss: 0.0001
+  Stage 4 Epoch 3: Train=0.0000, Val=0.0001
+  New best val loss: 0.0001
+  Stage 4 Epoch 4: Train=0.0000, Val=0.0001
+  New best val loss: 0.0001
+  Stage 4 Epoch 5: Train=0.0000, Val=0.0001
+  New best val loss: 0.0001
+  Stage 4 Epoch 6: Train=0.0000, Val=0.0001
+  New best val loss: 0.0001
+  Stage 4 Epoch 7: Train=0.0000, Val=0.0000
+  New best val loss: 0.0000
+  Stage 4 Epoch 8: Train=0.0000, Val=0.0001
+  Stage 4 Epoch 9: Train=0.0000, Val=0.0000
+  New best val loss: 0.0000
+  Stage 4 Epoch 10: Train=0.0000, Val=0.0000
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:03<00:00,  3.53s/it]Writing model shards: 100%|██████████| 1/1 [00:03<00:00,  3.53s/it]
+Writing model shards:   0%|          | 0/1 [00:00<?, ?it/s]Writing model shards: 100%|██████████| 1/1 [00:03<00:00,  3.44s/it]Writing model shards: 100%|██████████| 1/1 [00:03<00:00,  3.44s/it]
+
+Saved final model: fdm_40ch_fresh_lfm2_model_final/
