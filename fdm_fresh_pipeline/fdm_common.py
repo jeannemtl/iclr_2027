@@ -283,6 +283,54 @@ def score_rule(rule: str, response: str) -> bool:
     return rule in response
 
 
+def score_rule_conditional(rule: str, meta: str, response: str):
+    """
+    Returns (applicable, correct).
+
+    Isolates RULE-channel decoding accuracy from the META
+    answer-template gate. The ground-truth answer only emits the
+    RULE name when meta=="NONE" -- every non-NONE META branch in
+    generate_*_answer returns before reaching the rule-name logic.
+    Scoring every sample against `rule in response` (score_rule
+    above) therefore caps aggregate accuracy near ~20-40% regardless
+    of true decoding quality, since ~80% of samples have no rule
+    name in the reference answer to match against at all.
+
+    This restricts scoring to samples where meta == "NONE", where
+    the check is actually answerable. `applicable=False` for
+    meta != "NONE" samples signals the caller to exclude them from
+    the conditional metric's denominator entirely -- they are not
+    counted as wrong, they are not counted at all.
+    """
+    if meta != "NONE":
+        return False, False
+    return True, (rule in response)
+
+
+def score_rule_conditional(rule: str, meta: str, response: str):
+    """
+    Returns (applicable, correct).
+
+    Isolates RULE-channel decoding accuracy from the META
+    answer-template gate. The ground-truth answer only emits the
+    RULE name when meta=="NONE" -- every non-NONE META branch in
+    generate_*_answer returns before reaching the rule-name logic.
+    Scoring every sample against `rule in response` (score_rule
+    above) therefore caps aggregate accuracy near ~20-40% regardless
+    of true decoding quality, since ~80% of samples have no rule
+    name in the reference answer to match against at all.
+
+    This restricts scoring to samples where meta == "NONE", where
+    the check is actually answerable. `applicable=False` for
+    meta != "NONE" samples signals the caller to exclude them from
+    the conditional metric's denominator entirely -- they are not
+    counted as wrong, they are not counted at all.
+    """
+    if meta != "NONE":
+        return False, False
+    return True, (rule in response)
+
+
 def score_fact(question: str, facts: dict, response: str) -> bool:
     """Unchanged: which fact channel is checked depends on question type."""
     if question.startswith("Should"):
@@ -550,6 +598,10 @@ def evaluate_model(model, tokenizer, test_path, device, model_short, max_new_tok
     total = 0
     ch_correct = {}
     ch_total = {}
+    rule_conditional_correct = 0
+    rule_conditional_total = 0
+    rule_conditional_correct = 0
+    rule_conditional_total = 0
 
     pad_id = tokenizer.pad_token_id if tokenizer.pad_token_id is not None else tokenizer.eos_token_id
 
@@ -575,6 +627,18 @@ def evaluate_model(model, tokenizer, test_path, device, model_short, max_new_tok
 
         if score_rule(rule, response):
             rule_correct += 1
+
+        applicable, cond_correct = score_rule_conditional(rule, meta, response)
+        if applicable:
+            rule_conditional_total += 1
+            if cond_correct:
+                rule_conditional_correct += 1
+
+        applicable, cond_correct = score_rule_conditional(rule, meta, response)
+        if applicable:
+            rule_conditional_total += 1
+            if cond_correct:
+                rule_conditional_correct += 1
 
         # CORRECTED: real check for all five META values, no auto-pass
         if score_meta(meta, response):
@@ -605,6 +669,10 @@ def evaluate_model(model, tokenizer, test_path, device, model_short, max_new_tok
     print(f"{'='*60}")
     print(f"  Action:  {100*action_correct/total:.1f}%")
     print(f"  Rule:    {100*rule_correct/total:.1f}%")
+    rule_cond_pct = (100 * rule_conditional_correct / rule_conditional_total) if rule_conditional_total else float('nan')
+    print(f"  Rule (conditional, META=NONE only, n={rule_conditional_total}): {rule_cond_pct:.1f}%")
+    rule_cond_pct = (100 * rule_conditional_correct / rule_conditional_total) if rule_conditional_total else float('nan')
+    print(f"  Rule (conditional, META=NONE only, n={rule_conditional_total}): {rule_cond_pct:.1f}%")
     print(f"  Meta:    {100*meta_correct/total:.1f}%")
     print(f"  Fact:    {100*fact_correct/total:.1f}%")
     print(f"  Extra:   {100*extra_correct/max(extra_total,1):.1f}%")
@@ -620,6 +688,10 @@ def evaluate_model(model, tokenizer, test_path, device, model_short, max_new_tok
     return {
         "action": 100 * action_correct / total,
         "rule": 100 * rule_correct / total,
+        "rule_conditional": rule_cond_pct,
+        "rule_conditional_n": rule_conditional_total,
+        "rule_conditional": rule_cond_pct,
+        "rule_conditional_n": rule_conditional_total,
         "meta": 100 * meta_correct / total,
         "fact": 100 * fact_correct / total,
         "extra": 100 * extra_correct / max(extra_total, 1),
